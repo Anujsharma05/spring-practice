@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean name="apple" class="com.course.spring.springcore.assignment.Item">
+		<property name="id" value="11"></property>
+		<property name="name" value="Apples"></property>
+		<property name="price" value="123.4"></property>
+		<property name="quantity" value="4"></property>
+	</bean>
+	<bean name="mango" class="com.course.spring.springcore.assignment.Item">
+		<property name="id" value="12"></property>
+		<property name="name" value="Mangoes"></property>
+		<property name="price" value="66.53"></property>
+		<property name="quantity" value="12"></property>
+	</bean>
+	
+	<bean name="cart" class="com.course.spring.springcore.assignment.ShoppingCart">
+		<property name="items">
+			<list>
+				<ref bean="apple"></ref>
+				<ref bean="mango"></ref>
+			</list>
+		</property>
+	</bean>
+</beans>

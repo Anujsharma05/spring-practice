@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean name="scores" class="com.course.spring.springcore.reference.Scores">
+		<property name="maths" value="95"></property>
+		<property name="physics" value="55.5"></property>
+		<property name="chemistry" value="89"></property>
+	</bean>
+	
+	<!-- <bean name="student" class="com.course.spring.springcore.reference.Student">
+		<property name="name" value="Anuj"></property>
+		<property name="scores" ref="scores"></property>
+		<property name="scores">
+			<ref bean="scores"></ref>
+		</property>
+	</bean> -->
+	<bean name="student" class="com.course.spring.springcore.reference.Student" p:name="Anuj" p:scores-ref="scores" />
+	
+</beans>
